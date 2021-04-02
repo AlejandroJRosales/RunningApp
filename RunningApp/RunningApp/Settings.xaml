@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RunningApp.Settings">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="65" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" 
+                  Margin="14, 10, 14, 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Label Text="Gender"
+                       TextColor="DeepSkyBlue"
+                       FontSize="19"
+                       Grid.Row="0"/>
+                <Entry x:Name="genderEntry"
+                       Grid.Row="1"/>
+            </Grid>
+            
+            <Grid Grid.Row="1"
+                  Margin="14, 10, 14, 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45" />
+                    <RowDefinition Height="39" />
+                </Grid.RowDefinitions>
+                <Label Text="Date of Birth" 
+                           TextColor="DeepSkyBlue"
+                           FontSize="19"
+                           Grid.Row="0" />
+                <DatePicker x:Name="dobPicker"
+                            Date="06/21/2018"
+                            Grid.Row="1" />
+            </Grid>
+            
+            <Grid Grid.Row="2"
+                  Margin="14, 10, 14, 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Miles"
+                       TextColor="DeepSkyBlue"
+                       FontSize="19"
+                       Grid.Column="0"
+                       Padding="0, 32, 0, 0"/>
+                <Switch x:Name="unitsSwitch"
+                        Grid.Column="1"/>
+                <Label Text="Kilometers"
+                       TextColor="DeepSkyBlue"
+                       FontSize="19"
+                       Grid.Column="2"
+                       Padding="0, 32, 0, 0"/>
+            </Grid>
+
+            <Button Text="Submit"
+                    TextColor="DeepPink"
+                    FontSize="19"
+                    FontAttributes="Bold"
+                    BackgroundColor="White"
+                    Clicked="SubmitClicked"
+                    Grid.Row="4" />
+
+            <Button Text="Credits"
+                    BackgroundColor="OrangeRed"
+                    TextColor="White"
+                    FontSize="19"
+                    Margin="14, 0, 14, 10"
+                    Clicked="CreditsClicked"
+                    Grid.Row="5"
+                    CornerRadius="10" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

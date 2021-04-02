@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RunningApp.Activities">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="110" />
+                <RowDefinition Height="75" />
+                <RowDefinition Height="250" />
+                <RowDefinition Height="150" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0"
+                  Margin="0, 10, 28, 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="85" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0"
+                      Margin="28, 0, 0, 0">
+                    <Label x:Name="runDistanceLabel"
+                           Text="Distance in Miles"
+                           FontAttributes="Bold"
+                           Grid.Column="0"
+                           Grid.Row="0"
+                           TextColor="DeepSkyBlue"
+                           FontSize="19" />
+                    <Entry x:Name="runDistanceEntry"
+                           Keyboard="Numeric"
+                           Placeholder="4.2"
+                           Grid.Column="0"
+                           Grid.Row="1"/>
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <Label x:Name="runTimeLabel" 
+                           Text="Run Time"
+                           FontAttributes="Bold"
+                           Grid.Column="0"
+                           Grid.Row="0"
+                           TextColor="DeepSkyBlue"
+                           FontSize="19"
+                           />
+                    <Entry x:Name="runTime"
+                           Placeholder="3:28"
+                           Grid.Column="0"
+                           Grid.Row="1"
+                           Margin="0, 0, 5, 0"/>
+                </Grid>
+            </Grid>
+
+            <StackLayout Grid.Row="1"
+                         Margin="28, 0, 28, 0">
+                <Label Text="Date of Run" 
+                       TextColor="DeepSkyBlue"
+                       FontAttributes="Bold"
+                       FontSize="19" />
+                <DatePicker x:Name="runDatePicker"
+                            Date="06/21/2018" />
+            </StackLayout>
+
+            <Frame Grid.Row="2" 
+                   Margin="28, 28, 28, 28"
+                   CornerRadius="10"
+                   HasShadow="True"
+                   BackgroundColor="LightBlue">
+                
+                <StackLayout Spacing="0">
+                    <Label Text="Running Log"
+                           FontSize="19"
+                           FontAttributes="Bold" />
+
+                    <ListView x:Name="runLogListView"
+                              BackgroundColor="LightBlue" />
+                </StackLayout>
+            </Frame>
+
+            <Grid Grid.Row="3"
+                  Margin="28, 0, 28, 10">
+                <Button Text="Add"
+                        Clicked="AddClicked"
+                        Grid.Row="0"
+                        TextColor="Green"
+                        CornerRadius="10" />
+                <Button Text="Update"
+                        Clicked="UpdateClicked"
+                        Grid.Row="1"
+                        CornerRadius="10" />
+                <Button Text="Delete"
+                        Clicked="DeleteClicked"
+                        TextColor="Red" 
+                        Grid.Row="2"
+                        CornerRadius="10" />
+            </Grid>
+         </Grid>
+    </ContentPage.Content>
+</ContentPage>
